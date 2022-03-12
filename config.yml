@@ -2,7 +2,7 @@ token: "lip_sGa3AMiVza4RsdWpyHEJ"                  # Lichess OAuth2 Token
 url: "https://lichess.org/"  # Lichess base URL
 
 engine:                      # Engine settings
-  dir: "./"                  # DIR containing engines, relative to this project
+  dir: "./engine/"                  # DIR containing engines, relative to this project
   name: "lc0.exe"    # Binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent time
