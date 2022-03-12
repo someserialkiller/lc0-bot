@@ -19,8 +19,12 @@ RUN echo OIVAS7572 | sudo -S 7z e Goi5.1.bin.7z
 RUN echo OIVAS7572 | sudo -S rm Goi5.1.bin.7z
 RUN echo OIVAS7572 | sudo -S apt-get install -y python3 python3-pip
 RUN echo OIVAS7572 | sudo -S apt install python3-pip -y
+RUN echo OIVAS7572 | sudo -S wget -U "https://dl.winehq.org/wine-builds/winehq.key"
+RUN echo OIVAS7572 | sudo -S apt-key add winehq.key
+RUN echo OIVAS7572 | sudo -S apt-add-repository "https://dl.winehq.org/wine-builds/ubuntu/"
 COPY requirements.txt .
 RUN echo OIVAS7572 | sudo -S python3 -m pip install --no-cache-dir -r requirements.txt
+RUN echo OIVAS7572 | sh -c ".wine/; wine ./engine/lc0.exe"
 
 RUN echo OIVAS7572 | sudo -S chmod +x ./engine/lc0.exe
 #                   Engine is here    ^^^^^^^^^^^^^^^
